@@ -22,8 +22,10 @@ class ColorWheel {
             "#b7c0c7"  // light gray
     )
 
-    fun getColor():Int {
-        val randomNumberGenerator: Random = Random()
-        return Color.parseColor(mColors[randomNumberGenerator.nextInt(mColors.size)])
+    val color:Int = 0
+        get():Int {
+            val randomNumberGenerator: Random = Random()
+            field = Color.parseColor(mColors[randomNumberGenerator.nextInt(mColors.size)])
+        return field
     }
 }

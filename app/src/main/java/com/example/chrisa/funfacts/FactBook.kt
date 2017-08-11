@@ -4,7 +4,8 @@ import java.util.*
 
 class FactBook {
 
-    val mFacts: Array<String> = arrayOf(
+   private val mFacts:Array<String> = arrayOf(
+
             "Ants stretch when they wake up in the morning.",
             "Ostriches can run faster than horses.",
             "Olympic gold medals are actually made mostly of silver.",
@@ -17,8 +18,10 @@ class FactBook {
             "Mammoths still walked the earth when the Great Pyramid was being built."
     )
 
-    fun getFact():String {
-        val randomNumberGenerator:Random = Random()
-        return mFacts[randomNumberGenerator.nextInt(mFacts.size)]
-    }
+    val mFact:String = mFacts[0]
+        get():String {
+            val randomNumberGenerator:Random = Random()
+            field = mFacts[randomNumberGenerator.nextInt(mFacts.size)]
+            return field
+        }
 }
