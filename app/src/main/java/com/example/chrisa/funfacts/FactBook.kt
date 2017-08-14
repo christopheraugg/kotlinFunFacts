@@ -2,7 +2,7 @@ package com.example.chrisa.funfacts
 
 import java.util.*
 
-class FactBook {
+object FactBook {
 
    private val mFacts:Array<String> = arrayOf(
 

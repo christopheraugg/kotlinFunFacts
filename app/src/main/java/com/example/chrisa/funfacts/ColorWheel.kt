@@ -4,7 +4,7 @@ import android.graphics.Color
 import java.util.*
 
 
-class ColorWheel {
+object ColorWheel {
 
     val mColors:Array<String> = arrayOf(
             "#39add1", // light blue
