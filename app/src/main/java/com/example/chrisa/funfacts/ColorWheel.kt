@@ -3,7 +3,6 @@ package com.example.chrisa.funfacts
 import android.graphics.Color
 import java.util.*
 
-
 object ColorWheel {
 
     val mColors:Array<String> = arrayOf(
@@ -26,6 +25,6 @@ object ColorWheel {
         get():Int {
             val randomNumberGenerator: Random = Random()
             field = Color.parseColor(mColors[randomNumberGenerator.nextInt(mColors.size)])
-        return field
-    }
+            return field
+        }
 }

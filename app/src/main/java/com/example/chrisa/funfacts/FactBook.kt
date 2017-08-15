@@ -4,7 +4,7 @@ import java.util.*
 
 object FactBook {
 
-   private val mFacts:Array<String> = arrayOf(
+   private val mFacts = arrayOf(
 
             "Ants stretch when they wake up in the morning.",
             "Ostriches can run faster than horses.",
@@ -19,9 +19,10 @@ object FactBook {
     )
 
     val mFact:String = mFacts[0]
-        get():String {
-            val randomNumberGenerator:Random = Random()
+        get(): String {
+            val randomNumberGenerator: Random = Random()
             field = mFacts[randomNumberGenerator.nextInt(mFacts.size)]
             return field
         }
+
 }

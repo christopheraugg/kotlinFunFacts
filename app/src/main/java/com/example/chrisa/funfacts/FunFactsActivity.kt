@@ -19,7 +19,6 @@ class FunFactsActivity: AppCompatActivity() {
         mShowFactButton.setOnClickListener {
 
            val color:Int =  ColorWheel.color
-
            mFactTextView.setText(FactBook.mFact)
            mRelativeLayout.setBackgroundColor(color)
            mShowFactButton.setTextColor(color)
