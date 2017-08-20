@@ -2,9 +2,8 @@ package com.example.chrisa.funfacts
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.RelativeLayout
-import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_fun_facts.*
+
 
 class FunFactsActivity: AppCompatActivity() {
 
@@ -12,16 +11,13 @@ class FunFactsActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fun_facts)
 
-        val mFactTextView = findViewById(R.id.factTextView) as TextView
-        val mShowFactButton = findViewById(R.id.showFactButton) as Button
-        val mRelativeLayout = findViewById(R.id.relativeLayout) as RelativeLayout
-
-        mShowFactButton.setOnClickListener {
+        showFactButton.setOnClickListener {
 
            val color:Int =  ColorWheel.color
-           mFactTextView.setText(FactBook.mFact)
-           mRelativeLayout.setBackgroundColor(color)
-           mShowFactButton.setTextColor(color)
+
+           factTextView.text = FactBook.mFact
+           relativeLayout.setBackgroundColor(color)
+           showFactButton.setTextColor(color)
        }
 
     }
