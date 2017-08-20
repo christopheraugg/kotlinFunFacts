@@ -3,28 +3,15 @@ package com.example.chrisa.funfacts
 import android.graphics.Color
 import java.util.*
 
-object ColorWheel {
+class ColorWheel(private val mColors: IntArray = intArrayOf()) {
 
-    val mColors:Array<String> = arrayOf(
-            "#39add1", // light blue
-            "#3079ab", // dark blue
-            "#c25975", // mauve
-            "#e15258", // red
-            "#f9845b", // orange
-            "#838cc7", // lavender
-            "#7d669e", // purple
-            "#53bbb4", // aqua
-            "#51b46d", // green
-            "#e0ab18", // mustard
-            "#637a91", // dark gray
-            "#f092b0", // pink
-            "#b7c0c7"  // light gray
-    )
-
-    val color:Int = 0
-        get():Int {
-            val randomNumberGenerator: Random = Random()
-            field = Color.parseColor(mColors[randomNumberGenerator.nextInt(mColors.size)])
-            return field
+    private val DEFAULT_COLOR = "#51b46d"
+    val color:Int
+        get() {
+            if (mColors.isNotEmpty()) {
+                val randomNumberGenerator = Random()
+                return mColors[randomNumberGenerator.nextInt(mColors.size)]
+            }
+            return Color.parseColor(DEFAULT_COLOR)
         }
 }

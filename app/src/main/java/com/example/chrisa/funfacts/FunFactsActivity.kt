@@ -11,11 +11,14 @@ class FunFactsActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fun_facts)
 
+        val mFacts = FactBook(resources.getStringArray(R.array.fact_strings_array))
+        val mColor = ColorWheel(resources.getIntArray(R.array.fact_colors_array))
+
         showFactButton.setOnClickListener {
 
-           val color:Int =  ColorWheel.color
+           val color:Int = mColor.color
 
-           factTextView.text = FactBook.mFact
+           factTextView.text = mFacts.mFact
            relativeLayout.setBackgroundColor(color)
            showFactButton.setTextColor(color)
        }
